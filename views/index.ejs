@@ -5,23 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Stack App Template</title>
+    <title>NetDesigner Woes</title>
     <link rel="stylesheet" href="/public/css/style.css">
 </head>
 
 <body>
-    <h2>This is a TEST for your full stack template!</h2>
+    <h1>NetDesigner Woes</h1>
 
-    <h2>Here's how you set up and push to Heroku</h2>
-    <ul>
-        <li>git init</li>
-        <li>heroku login</li>
-        <li>heroku create folder name here</li>
-        <li>echo "web: node server.js" > Procfile</li>
-        <li>git add .</li>
-        <li>git commit -m</li>
-        <li>git push heroku main</li>
-    </ul>
+    <h2>Document your NetDesigner woes below:</h2>
+    <form action="/netdesigner" method="POST">
+        <input type="text" placeholder="name" name="name">
+        <input type="text" placeholder="issue" name="issue">
+        <input type="text" placeholder="wishes" name="wishes">
+        <input type="text" placeholder="actionTaken" name="actionTaken">
+        <input type="text" placeholder="solution" name="solution">
+        <button type="submit">Submit</button>
+      </form>
     <script src="/public/js/main.js"></script>
 </body>
 
