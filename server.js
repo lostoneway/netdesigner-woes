@@ -29,20 +29,21 @@ app.use(cors())
 
 //Routes
 app.get('/', (request,response) => {
-    db.collection('woes').find().sort({likes: -1}).toArray()
+    db.collection('netdesigner').find().sort({likes: -1}).toArray()
     .then(data => {
         response.render('index.ejs', {info: data})
     }) 
     .catch(error => response.status(500).send({message: error.message}))
 })
 
-app.post('/addWoe', (req, res) => {
-    console.log(req.body)
-    // db.collection('woes').insertOne({name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown:0}, (err, result) => {
-    //   if (err) return console.log(err)
-    //   console.log('saved to database')
-    //   res.redirect('/')
-    // })
+app.post('/addWoe', (request, response) => {
+    // console.log(req.body)
+    db.collection('netdesigner').insertOne({name: request.body.name, issue: request.body.issue, wishes: request.body.wishes, actionTaken: request.body.actionTaken, solution: request.body.solution, likes: 0}) 
+    .then(result => {
+        console.log('NetDesigner Woe Added')
+        response.redirect('/')
+    })
+    .catch(error => response.status(500).send({message: error.message}))
   })
 
 //setup listening port 
