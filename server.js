@@ -28,15 +28,15 @@ app.use(express.json())
 app.use(cors())
 
 //Routes
-app.get('/', async(request,response) => {
-    try {
-        response.render('index.ejs')
-    } catch(error){
-        response.status(500).send({message: error.message})
-    }
+app.get('/', (request,response) => {
+    db.collection('woes').find().sort({likes: -1}).toArray()
+    .then(data => {
+        response.render('index.ejs', {info: data})
+    }) 
+    .catch(error => response.status(500).send({message: error.message}))
 })
 
-app.post('/netdesigner', (req, res) => {
+app.post('/addWoe', (req, res) => {
     console.log(req.body)
     // db.collection('woes').insertOne({name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown:0}, (err, result) => {
     //   if (err) return console.log(err)
