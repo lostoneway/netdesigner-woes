@@ -7,14 +7,14 @@ Our fiber documentation software at work leaves less than to be desired. I wante
 
 ## How It's Made:
 
-**Tech used:** HTML, CSS, JavaScript, MongoDB and Node.js
+**Tech used:** HTML, CSS, JavaScript, Bootstrap, MongoDB and Node.js
 
 I wanted to make so we wouldn't have to share an excel file via email. Or go to an editable excel. Excels are great we just use them for everything. 
 
 
 ## Issues 
 - I am not a designer, I have to figure out how I want the data to be displayed once input.  
-- Unsure on how to "edit" a document once it's made and sent to the database. I'll dig into some docs and ask for help. 
+- Found solution to edit and delete items in my collection. Will implement soon!
 
 ## Optimizations
 
