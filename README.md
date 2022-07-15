@@ -14,15 +14,17 @@ I wanted to make so we wouldn't have to share an excel file via email. Or go to 
 
 ## Issues 
 - I am not a designer, I have to figure out how I want the data to be displayed once input.  
+- Unsure on how to "edit" a document once it's made and sent to the database. I'll dig into some docs and ask for help. 
 
 ## Optimizations
 
 - Utilized existing db and made a new collection. 
+- Got some good practice with Bootstrap to make a this web app fully responsive. 
 
 ## Lessons Learned:
 
 - Install nodemon --dev was a lifesaver whenever I made changes to my server.js! 
-- H
+- Don't try to do too much at once. Always build a little, TEST, save and push my code. 
 
 ## Steps to set up a project: 
 To be continued. 
