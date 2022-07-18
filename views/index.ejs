@@ -10,55 +10,62 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
 
 <body>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg bg-info navbar-info  py-3">
-            <div class="container">
-                <a href="#" class="navbar-brand">
-                    Fiber Ninjas <i class="bi bi-person-check"></i></a>
-    
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-    
-                <div class="collapse navbar-collapse" id="navmenu">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a href="#problem" class="nav-link">NetDesigner Woes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#team" class="nav-link">Meet The Team</a>
-                        </li>
-                        <!-- <li class="nav-item">
-                            <a href="#" class="nav-link">What's The Problem?</a>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-info navbar-info  py-3">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                Fiber Ninjas <i class="bi bi-person-check"></i></a>
 
-        <!-- showcase -->
-        <section class="bg-info text-light p-5
-        text-center text-sm-start">
-            <div class="container">
-                <div class="d-sm-flex align-items-center justify-content-between">
-                    <div>
-                        <h1>What Are Your <span class="text-warning">NetDesigner Woes</span>?</h1>
-                        <p class="lead my-4">
-                            NetDesigner sucks! We all have had many problems with this software and I know all of you are sick of it. Let's come together and try to fix these problems!
-                        </p>
-                        <!-- <button class="btn btn-primary btn-lg">Sign Up Now!</button> -->
-                    </div>
-                    <img class="img-fluid w-50 d-none d-sm-block" src="img/undraw_process_re_gws7.svg" alt="">
-                </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#top" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#problem" class="nav-link">What's The Problem?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#team" class="nav-link">Meet The Team</a>
+                    </li>
+                </ul>
             </div>
-        </section>
-        
+        </div>
+    </nav>
+
+    <!-- showcase -->
+    <section class="bg-info text-light p-5
+        text-center text-sm-start">
+        <div class="container">
+            <div class="d-sm-flex align-items-center justify-content-between">
+                <div>
+                    <h1>What Are Your <span class="text-warning">NetDesigner Woes</span>?</h1>
+                    <p class="lead my-4">
+                        NetDesigner sucks! We all have had many problems with this software. Let's come together and try
+                        to fix these problems!
+                    </p>
+                    <!-- <button class="btn btn-primary btn-lg">Sign Up Now!</button> -->
+                </div>
+                <img class="img-fluid w-50 d-none d-sm-block" src="img/undraw_process_re_gws7.svg" alt="">
+            </div>
+        </div>
+    </section>
+
     <h1>NetDesigner Woes</h1>
     <h2>What are your NetDesigner woes?</h2>
     <form action="/addWoe" method="POST">
