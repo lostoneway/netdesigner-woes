@@ -68,16 +68,17 @@
 
     <section id="problem" class="p-4 text-center text-sm-start">
         <div class="container">
-            <h2>What's the Problem?</h2>
-            <form action="/addWoe" method="POST">
-                <input type="text" placeholder="Name" name="name">
-                <input type="text" placeholder="Issue" name="issue">
-                <input type="text" placeholder="Wishes" name="wishes">
-                <input type="text" placeholder="Action Taken" name="actionTaken">
-                <input type="text" placeholder="Solution" name="solution">
-                <button type="submit">Submit</button>
-            </form>
-
+            <div class="d-md-flex justify-content-between align-items-center">
+                <h2>What's the Problem?</h2>
+                <form action="/addWoe" method="POST">
+                    <input type="text" placeholder="Name" name="name">
+                    <input type="text" placeholder="Issue" name="issue">
+                    <input type="text" placeholder="Wishes" name="wishes">
+                    <input type="text" placeholder="Action Taken" name="actionTaken">
+                    <input type="text" placeholder="Solution" name="solution">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
             <h2>List of Woes:</h2>
             <ul class="woes">
                 <% for(let i=0; i < info.length; i++) {%>
@@ -97,8 +98,8 @@
                         <span>
                             <%= info[i].solution %>
                         </span>
-                        <span class='fa-thumbs-up'></span>
-                        <span class='fa-trash'></span>
+                        <span><i class="bi bi-pencil-square"></i></span>
+                        <span><i class="bi bi-trash"></i></span>
                     </li>
                     <% } %>
             </ul>
