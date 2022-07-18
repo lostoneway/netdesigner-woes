@@ -49,7 +49,7 @@
     </nav>
 
     <!-- showcase -->
-    <section class="bg-info text-light p-5
+    <section id="top" class="bg-info text-light p-4
         text-center text-sm-start">
         <div class="container">
             <div class="d-sm-flex align-items-center justify-content-between">
@@ -66,41 +66,44 @@
         </div>
     </section>
 
-    <h1>NetDesigner Woes</h1>
-    <h2>What are your NetDesigner woes?</h2>
-    <form action="/addWoe" method="POST">
-        <input type="text" placeholder="Name" name="name">
-        <input type="text" placeholder="Issue" name="issue">
-        <input type="text" placeholder="Wishes" name="wishes">
-        <input type="text" placeholder="Action Taken" name="actionTaken">
-        <input type="text" placeholder="Solution" name="solution">
-        <button type="submit">Submit</button>
-    </form>
+    <section id="problem" class="p-4 text-center text-sm-start">
+        <div class="container">
+            <h2>What's the Problem?</h2>
+            <form action="/addWoe" method="POST">
+                <input type="text" placeholder="Name" name="name">
+                <input type="text" placeholder="Issue" name="issue">
+                <input type="text" placeholder="Wishes" name="wishes">
+                <input type="text" placeholder="Action Taken" name="actionTaken">
+                <input type="text" placeholder="Solution" name="solution">
+                <button type="submit">Submit</button>
+            </form>
 
-    <h2>List of Woes:</h2>
-    <ul class="woes">
-        <% for(let i=0; i < info.length; i++) {%>
-            <li class="woes">
-                <span>
-                    <%= info[i].name %>
-                </span>
-                <span>
-                    <%= info[i].issue %>
-                </span>
-                <span>
-                    <%= info[i].wishes %>
-                </span>
-                <span>
-                    <%= info[i].actionTaken %>
-                </span>
-                <span>
-                    <%= info[i].solution %>
-                </span>
-                <span class='fa-thumbs-up'></span>
-                <span class='fa-trash'></span>
-            </li>
-            <% } %>
-    </ul>
+            <h2>List of Woes:</h2>
+            <ul class="woes">
+                <% for(let i=0; i < info.length; i++) {%>
+                    <li class="woes">
+                        <span>
+                            <%= info[i].name %>
+                        </span>
+                        <span>
+                            <%= info[i].issue %>
+                        </span>
+                        <span>
+                            <%= info[i].wishes %>
+                        </span>
+                        <span>
+                            <%= info[i].actionTaken %>
+                        </span>
+                        <span>
+                            <%= info[i].solution %>
+                        </span>
+                        <span class='fa-thumbs-up'></span>
+                        <span class='fa-trash'></span>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
+    </section>
     <script src="/public/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
