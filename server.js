@@ -1,3 +1,6 @@
+/* To Do: 
+- Make Edit and Delete buttons functional with event listeners and server.js */
+
 console.log('Sweet, Node is running')
 //setup dependancies 
 const express = require('express')
