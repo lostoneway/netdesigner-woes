@@ -29,7 +29,7 @@ app.use(cors())
 
 //Routes
 app.get('/', (request,response) => {
-    db.collection('netdesigner').find().sort({likes: -1}).toArray()
+    db.collection('netdesigner').find().toArray()
     .then(data => {
         response.render('index.ejs', {info: data})
     }) 
