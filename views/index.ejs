@@ -83,30 +83,33 @@
     <section class="p-4 text-center text-sm-start">
         <div class="container">
             <div class="d-md-flex flex-column justify-content-between align-items-center">
-                <h2>List of Woes:</h2>
-                <ul class="woes">
-                    <% for(let i=0; i < info.length; i++) {%>
-                        <li class="woes">
-                            <span>
-                                <%= info[i].name %>
-                            </span>
-                            <span>
-                                <%= info[i].issue %>
-                            </span>
-                            <span>
-                                <%= info[i].wishes %>
-                            </span>
-                            <span>
-                                <%= info[i].actionTaken %>
-                            </span>
-                            <span>
-                                <%= info[i].solution %>
-                            </span>
-                            <span><i class="bi bi-pencil-square"></i></span>
-                            <span><i class="bi bi-trash"></i></span>
-                        </li>
-                        <% } %>
-                </ul>
+                <!-- <h2>List of Woes:</h2> -->
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Issue</th>
+                        <th scope="col">Wishes</th>
+                        <th scope="col">Action Taken</th>
+                        <th scope="col">Solution</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <% for(let i=0; i < info.length; i++) {%>
+                      <tr>
+                        <td><%= info[i].name %></td>
+                        <td><%= info[i].issue %></td>
+                        <td><%= info[i].wishes %></td>
+                        <td><%= info[i].actionTaken %></td>
+                        <td> <%= info[i].solution %></td>
+                        <td><i class="bi bi-pencil-square"></i></td>
+                        <td><i class="bi bi-trash"></i></span></td>
+                      </tr>
+                      <% } %>
+                    </tbody>
+                  </table>
             </div>
         </div>
         </div>
