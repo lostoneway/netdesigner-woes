@@ -103,8 +103,8 @@
                         <td><%= info[i].wishes %></td>
                         <td><%= info[i].actionTaken %></td>
                         <td> <%= info[i].solution %></td>
-                        <td><i class="bi bi-pencil-square"></i></td>
-                        <td><i class="bi bi-trash"></i></span></td>
+                        <td><a href="/edit/<%info._id %>" class="edit"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a href="/remove/<%info._id %>" class="remove"><i class="bi bi-trash"></a></i></td>
                       </tr>
                       <% } %>
                     </tbody>

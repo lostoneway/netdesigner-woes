@@ -41,7 +41,7 @@ app.get('/', (request,response) => {
 
 app.post('/addWoe', (request, response) => {
     // console.log(req.body)
-    db.collection('netdesigner').insertOne({name: request.body.name, issue: request.body.issue, wishes: request.body.wishes, actionTaken: request.body.actionTaken, solution: request.body.solution, likes: 0}) 
+    db.collection('netdesigner').insertOne({name: request.body.name, issue: request.body.issue, wishes: request.body.wishes, actionTaken: request.body.actionTaken, solution: request.body.solution}) 
     .then(result => {
         console.log('NetDesigner Woe Added')
         response.redirect('/')
