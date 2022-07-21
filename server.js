@@ -64,7 +64,7 @@ app
     const id = request.params.id; 
     db.collection('netdesigner').find().toArray()
     .then(data => {
-        response.render('edit.ejs', {info: data, idInfo: id})
+        response.render('edit.ejs', {info: data, info: id})
     }) 
     .catch(error => response.status(500).send({message: error.message}))
   })

@@ -56,7 +56,8 @@
                 <div>
                     <h1>What Are Your <span class="text-warning">NetDesigner Woes</span>?</h1>
                     <p class="lead my-4">
-                        NetDesigner sucks! We all have had many problems with this software. Let's come together, document our issues and get them fixed!
+                        NetDesigner sucks! We all have had many problems with this software. Let's come together,
+                        document our issues and get them fixed!
                     </p>
                     <!-- <button class="btn btn-primary btn-lg">Sign Up Now!</button> -->
                 </div>
@@ -85,19 +86,19 @@
                 <!-- <h2>Edit Woes:</h2> -->
                 <table class="table table-hover">
                     <thead>
-                      <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Issue</th>
-                        <th scope="col">Wishes</th>
-                        <th scope="col">Action Taken</th>
-                        <th scope="col">Solution</th>
-                        <th scope="col">Edit</th>
-                        <th scope="col">Delete</th>
-                      </tr>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Issue</th>
+                            <th scope="col">Wishes</th>
+                            <th scope="col">Action Taken</th>
+                            <th scope="col">Solution</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <% for(let i=0; i < info.length; i++) {%>
-                            <% if (info._id == idData){ %>
+                            <% if (info._id==idData) { %>
                                 <td>
                                     <form action="/edit/<%info._id%>" method="POST">
                                         <input type="text" placeholder="<%= info[i].name %>" name="name">
@@ -109,19 +110,32 @@
                                         <a href="/" class="cancel">Cancel</a>
                                     </form>
                                 </td>
-                            }
-                      <tr>
-                        <td><%= info[i].name %></td>
-                        <td><%= info[i].issue %></td>
-                        <td><%= info[i].wishes %></td>
-                        <td><%= info[i].actionTaken %></td>
-                        <td><%= info[i].solution %></td>
-                        <td><a href="/edit/<%info._id %>" class="edit"><i class="bi bi-pencil-square"></i></a></td>
-                        <td><a href="/remove/<%info._id %>" class="remove"><i class="bi bi-trash"></a></i></td>
-                      </tr>
-                      <% } %>
+                                <% }else { %>
+                                <tr>
+                                    <td>
+                                        <%= info[i].name %>
+                                    </td>
+                                    <td>
+                                        <%= info[i].issue %>
+                                    </td>
+                                    <td>
+                                        <%= info[i].wishes %>
+                                    </td>
+                                    <td>
+                                        <%= info[i].actionTaken %>
+                                    </td>
+                                    <td>
+                                        <%= info[i].solution %>
+                                    </td>
+                                    <td><a href="/edit/<%info._id %>" class="edit"><i
+                                                class="bi bi-pencil-square"></i></a></td>
+                                    <td><a href="/remove/<%info._id %>" class="remove"><i class="bi bi-trash"></a></i>
+                                    </td>
+                                </tr>
+                                <% } %>
+                                <% } %>
                     </tbody>
-                  </table>
+                </table>
             </div>
         </div>
         </div>
