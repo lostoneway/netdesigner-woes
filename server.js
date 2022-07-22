@@ -58,46 +58,7 @@ app.post('/addWoe', (request, response) => {
   })
 
 //EDIT or UPDATE METHOD
-app
-  .route('/edit/:id')
-  .get((request,response)=> {
-    const id = request.params.id; 
-    db.collection('netdesigner').find().toArray()
-    .then(data => {
-        response.render('edit.ejs', {info: data, info: id})
-    }) 
-    .catch(error => response.status(500).send({message: error.message}))
-  })
-  .post((request,response) => {
-    const id = request.params.id;
-    db.connection('netdesigner').findByIdAndUpdate(
-        id, 
-        {
-            name: request.body.name, 
-            issue: request.body.issue, 
-            wishes: request.body.wishes, 
-            actionTaken: request.body.actionTaken, 
-            solution: request.body.solution 
-        })
-        .then(result => {
-            console.log('NetDesigner Woe Updated')
-            response.redirect('/')
-        })
-        .catch(error => response.status(500).send({message: error.message}))
-  })
 
-//DELETE
-app
-  .route('/remove/:id')
-  .get((request,response)=>{
-    const id = request.params.id;
-    db.connection('netdesigner').findByIdAndRemove(id)
-    .then(result => {
-        console.log('NetDesigner Woe Deleted')
-        response.redirect('/')
-    }) 
-    .catch(error => response.status(500).send({message: error.message}))
-  })
 //setup listening port 
 app.listen(process.env.PORT || 3000, () => {
     //check that your server is running during development
