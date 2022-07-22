@@ -10,7 +10,7 @@ const MongoClient = require('mongodb').MongoClient
 require('dotenv').config()
 
 //variables
-let db,    
+let db,     
     dbConnectionString = process.env.DB_STRING,
     dbName = 'star-wars-quotes',
     collection = 'netdesigner'
