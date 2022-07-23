@@ -1,27 +1,22 @@
-/* To Do: 
-- Make Edit and Delete buttons functional with event listeners and server.js */
-
 console.log('Sweet, Node is running')
 //setup dependancies 
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const MongoClient = require('mongodb').MongoClient
+// const MongoClient = require('mongodb').MongoClient
+const mongoose = require('mongoose')
 require('dotenv').config()
+//add model variable 
 
 //variables
 let db,     
     dbConnectionString = process.env.DB_STRING,
-    dbName = 'star-wars-quotes',
-    collection = 'netdesigner'
+    dbName = 'NetdesignerWoesDemo',
+    collection = 'tasks'
 
 //connect to db
-MongoClient.connect(dbConnectionString) 
-    .then(client => {
-        console.log('Connected to Database')
-        db = client.db(dbName)
-        // collection = db.collection('quotes')
-    })
+mongoose.connect(dbConnectionString,{useNewUrlParser: true},
+    () => {console.log('Connected to Database')})
 
 //Middlewares 
 app.set('view engine','ejs')
@@ -32,30 +27,10 @@ app.use(cors())
 
 //Routes
 //GET or READ METHOD
-app.get('/', (request,response) => {
-    db.collection('netdesigner').find().toArray()
-    .then(data => {
-        response.render('index.ejs', {info: data})
-    }) 
-    .catch(error => response.status(500).send({message: error.message}))
-})
+
 
 //POST or CREATE METHOD
-app.post('/addWoe', (request, response) => {
-    // console.log(req.body)
-    db.collection('netdesigner').insertOne({ 
-        name: request.body.name, 
-        issue: request.body.issue, 
-        wishes: request.body.wishes, 
-        actionTaken: request.body.actionTaken, 
-        solution: request.body.solution
-    }) 
-    .then(result => {
-        console.log('NetDesigner Woe Added')
-        response.redirect('/')
-    })
-    .catch(error => response.status(500).send({message: error.message}))
-  })
+
 
 //EDIT or UPDATE METHOD
 
