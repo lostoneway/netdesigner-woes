@@ -56,11 +56,11 @@
                 <div>
                     <h1>What Are Your <span class="text-warning">NetDesigner Woes</span>?</h1>
                     <p class="lead my-4">
-                        NetDesigner sucks! We all have had many problems with this software. Let's come together, document our issues and get them fixed!
+                        NetDesigner sucks! We all have had many problems with this software. Let's come together,
+                        document our issues and get them fixed!
                     </p>
-                    <!-- <button class="btn btn-primary btn-lg">Sign Up Now!</button> -->
                 </div>
-                <img class="img-fluid w-50 d-none d-sm-block" src="img/undraw_process_re_gws7.svg" alt="">
+                <img class="img-fluid w-50 d-none d-sm-block" src="img/undraw_process_re_gws7.svg" alt="Undraw Process Image">
             </div>
         </div>
     </section>
@@ -69,7 +69,7 @@
         <div class="container">
             <div class="d-md-flex justify-content-between align-items-center">
                 <h2>What's the Problem?</h2>
-                <form id="form" action="/addWoe" method="POST">
+                <form action="/" method="POST">
                     <input type="text" placeholder="Name" name="name">
                     <input type="text" placeholder="Issue" name="issue">
                     <input type="text" placeholder="Wishes" name="wishes">
@@ -85,30 +85,44 @@
                 <!-- <h2>List of Woes:</h2> -->
                 <table class="table table-hover">
                     <thead>
-                      <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Issue</th>
-                        <th scope="col">Wishes</th>
-                        <th scope="col">Action Taken</th>
-                        <th scope="col">Solution</th>
-                        <th scope="col">Edit</th>
-                        <th scope="col">Delete</th>
-                      </tr>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Issue</th>
+                            <th scope="col">Wishes</th>
+                            <th scope="col">Action Taken</th>
+                            <th scope="col">Solution</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <% for(let i=0; i < info.length; i++) {%>
-                      <tr>
-                        <td><%= info[i].name %></td>
-                        <td><%= info[i].issue %></td>
-                        <td><%= info[i].wishes %></td>
-                        <td><%= info[i].actionTaken %></td>
-                        <td> <%= info[i].solution %></td>
-                        <td><a href="/edit/<%info._id %>" class="edit"><i class="bi bi-pencil-square"></i></a></td>
-                        <td><a href="#"><i class="bi bi-trash"></a></i></td>
-                      </tr>
-                      <% } %>
+                        <% netdesignerTasks.forEach(content=>{%>
+                            <tr>
+                                <td>
+                                    <%= content.name %>
+                                </td>
+                                <td>
+                                    <%= content.issue %>
+                                </td>
+                                <td>
+                                    <%= content.wishes %>
+                                </td>
+                                <td>
+                                    <%= content.actionTaken %>
+                                </td>
+                                <td>
+                                    <%= content.solution %>
+                                </td>
+                                <td><a href="/edit/<%=content._id %>" class="edit"><i
+                                            class="bi bi-pencil-square"></i></a>
+                                </td>
+                                <td>
+                                    <a href="/remove/<%=content._id %>" class="remove"><i class="bi bi-trash"></i></a>
+                                </td>
+                            </tr>
+                            <% }) %>
                     </tbody>
-                  </table>
+                </table>
             </div>
         </div>
         </div>
