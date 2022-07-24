@@ -1,3 +1,5 @@
+//To Do: Make Delete route 
+
 console.log('Sweet, Node is running')
 //setup dependancies 
 const express = require('express')
@@ -23,7 +25,8 @@ app.use(cors())
 
 //connect to db
 mongoose.connect(dbConnectionString,{useNewUrlParser: true},
-    () => {console.log('Connected to Database')})
+    () => {console.log('Connected to Database');}
+    )
 
 
 //Routes
@@ -33,10 +36,10 @@ app.get('/', async (req, res) => {
         NetdesignerTask.find({},(error,tasks)=>{
             res.render('index.ejs',{
                 netdesignerTasks: tasks
-            })
-        })
+            });
+        });
     } catch (error) {
-        res.status(500).send({message: error.message})
+        if(error)res.status(500).send({message: error.message})
     }
 })
 
@@ -62,7 +65,31 @@ app.post('/', async (req,res) => {
 })
 
 //EDIT or UPDATE METHOD
-
+app
+    .route('/edit/:id')
+    .get((req,res) => {
+        const id = req.params.id;
+        NetdesignerTask.find({},(error,tasks) => {
+            res.render('edit.ejs', {
+                netdesignerTasks: tasks, idTask: id});
+        });
+    })
+    .post((req,res) => {
+        const id = req.params.id;
+        NetdesignerTask.findByIdAndUpdate(
+            id,
+            {
+                name: req.body.name,
+                issue: req.body.issue,
+                wishes: req.body.wishes,
+                actionTaken: req.body.actionTaken,
+                solution: req.body.solution
+            },
+            error => {
+                if(error)res.status(500).send({message: error.message})
+                res.redirect('/');
+            });
+    });
 //setup listening port 
 app.listen(process.env.PORT || 3000, () => {
     //check that your server is running during development
