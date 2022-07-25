@@ -87,18 +87,18 @@
                             <% if (content._id == idTask) { %>
                                 <td>
                                     <form action="/edit/<%= content.id %>" method="POST">
-                                            <input type="text" placeholder="<%= content.name %>" name="name">
+                                            <input type="text" value="<%= content.name %>" name="name" required="required">
                                         <td>
-                                            <input type="text" placeholder="<%= content.issue %>" name="issue">
+                                            <input type="text" value="<%= content.issue %>" name="issue">
                                         </td>
                                         <td> 
-                                            <input type="text" placeholder="<%= content.wishes %>" name="wishes">
+                                            <input type="text" value="<%= content.wishes %>" name="wishes">
                                         </td>
                                         <td>
-                                            <input type="text" placeholder="<%= content.actionTaken %>" name="actionTaken">
+                                            <input type="text" value="<%= content.actionTaken %>" name="actionTaken">
                                         </td>
                                         <td>
-                                            <input type="text" placeholder="<%= content.solution %>" name="solution">
+                                            <input type="text" value="<%= content.solution %>" name="solution">
                                         </td>
                                         <td>
                                             <button type="submit" class="confirm">Confirm</button>
