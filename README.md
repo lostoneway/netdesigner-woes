@@ -10,18 +10,18 @@
 
 **Tech used:** HTML, CSS, JavaScript, Bootstrap, MongoDB and Node.js
 
-I wanted to make so we wouldn't have to share an excel file via email. Or go to an editable excel. Excels are great we just use them for everything. 
+I wanted to make it so we wouldn't have to share an excel file via email. Or go to an editable excel. Excels are great we just use them for everything. 
 
 
 ## Issues 
 - I am not a designer, I have to figure out how I want the data to be displayed once input.  
 - When using `placeholder` on edit screen, it would be just that a placeholder and the data would be "erased" if I didn't update that field.
-- When using `required` in mongoose, it would show an error on submit but made user feel like submit worked until they read the error. 
+- When using `required` in mongoose, it would show an error on submit but made the user feel like submit worked until they read the error. 
 
 ## Optimizations
 
-- Utilized existing db and made a new collection. 
-- Got some good practice with Bootstrap to make a this web app fully responsive. 
+- Utilized free MongoDB cluster with a new db.
+- Got some good practice with Bootstrap to make a this web app responsive. 
 - Refactored code to have `required` as HTML attribute for a cleaner UI in both index.ejs and edit.js.
 - Removed `placeholder` on `edit.ejs` and changed to `value` so the content in that field stays when you resubmit your edits if you don't make a change. 
 
