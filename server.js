@@ -90,6 +90,17 @@ app
                 res.redirect('/');
             });
     });
+
+//DELETE 
+app
+    .route('/remove/:id')
+    .get((req,res) => {
+        const id = req.params.id;
+        NetdesignerTask.findByIdAndRemove(id,error =>{
+            if(error)res.status(500).send({message: error.message})
+            res.redirect('/');
+        })
+    })
 //setup listening port 
 app.listen(process.env.PORT || 3000, () => {
     //check that your server is running during development
