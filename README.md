@@ -17,6 +17,7 @@ I wanted to make it so we wouldn't have to share an excel file via email. Or go 
 - I am not a designer, I have to figure out how I want the data to be displayed once input.  
 - When using `placeholder` on edit screen, it would be just that a placeholder and the data would be "erased" if I didn't update that field.
 - When using `required` in mongoose, it would show an error on submit but made the user feel like submit worked until they read the error. 
+- When I have more time, I want to re-attack the edit page. On smaller screens the table stretches across the screen. I could make the table "responsive" in Bootstrap but it would make a horizontal scroll on the table. I may change it from a table to something more flex/responsive friendly. 
 
 ## Optimizations
 
