@@ -4,4 +4,11 @@ body{
 .bi-pencil-square, .bi-trash{
     text-decoration: none;
 }
-/* To Do:
+
+.bi-trash{
+    color: red;
+}
+
+.bi-arrow-up-square{
+    color: white;
+}
