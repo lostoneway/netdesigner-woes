@@ -3,7 +3,7 @@
 <p align="center">Our fiber documentation software at work leaves less than to be desired. I wanted to create a visually pleasing, user-friendly web app to keep track of our "woes".</p>
 
 **Link to project:** 
-[Netdesigner Woes](https://netdesigner-woes.herokuapp.com/)
+[Netdesigner Woes](https://netdesignerwoes.cyclic.app/)
 
 
 
@@ -34,8 +34,7 @@ I wanted to make it so we wouldn't have to share an excel file via email. Or go 
 - While you can use the `required` method in mongoose, the error doesn't look as "nice" on the screen as the built-in browser errors on fields you want populated. 
 
 
-## Steps to set up a project: 
-To be continued. 
+
 
 
 
