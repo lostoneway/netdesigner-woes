@@ -1,5 +1,3 @@
-//To Do: Make Delete route 
-
 console.log('Sweet, Node is running')
 //setup dependancies 
 const express = require('express')
